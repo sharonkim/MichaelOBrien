@@ -1,4 +1,9 @@
-<h1>Listing <%= @num %> Dojos</h1>
+<h1>Listing <%= pluralize(@dojos.count, "Dojo") %></h1>
+
+<% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+<% end %>
+
 <table>
     <thead>
         <tr>
@@ -18,5 +23,6 @@
         </tr>
         <% end %>
     </tbody>
-
 </table>
+
+<a href="/dojos/new">New Dojo</a>

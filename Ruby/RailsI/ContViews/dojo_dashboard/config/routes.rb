@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
     root "dojos#index"
-    resources :dojos 
+    resources :dojos do
+        resources :students
+    end
     # get "dojos/new" => "dojos#new"
     # post "dojos" => "dojos#create"
     # get "dojos/:id" => "dojos#show"

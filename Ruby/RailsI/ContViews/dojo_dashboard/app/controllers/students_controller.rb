@@ -35,14 +35,15 @@ class StudentsController < ApplicationController
             flash[:errors] = @student.errors.full_messages
             redirect_to :back
         end
+    end
 
-        def destroy
-            Student.find(params[:id])
-            redirect_to :root
+    def destroy
+        Student.find(params[:id])
+        redirect_to :root
+    end
+
+    private
+        def student_params
+            params.require(:student).permit(:first_name, :last_name, :email, :dojo_id)
         end
-
-        private
-            def student_params
-                params.require(:student).permit(:first_name, :last_name, :email, :dojo_id)
-            end
 end

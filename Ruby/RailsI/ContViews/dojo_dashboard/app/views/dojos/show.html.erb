@@ -17,10 +17,12 @@
         <th>Actions</th>
     </thead>
     <tbody>
-        <% @students.each do |s|%>
-            <tr>
-                <td><%= s.first_name %></td>
-            </tr>
+        <% if @students %>
+            <% @students.each do |s|%>
+                <tr>
+                    <td><%= s.first_name %></td>
+                </tr>
+            <% end %>
         <% end %>
     </tbody>
 </table>
